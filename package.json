@@ -1,0 +1,20 @@
+{
+  "name": "bootstrap5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch scss:assets/css --style compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.12",
+    "bootstrap": "^5.2.1",
+    "font-awesome": "^4.7.0",
+    "postcss": "^8.4.17"
+  }
+}

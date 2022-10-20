@@ -1,0 +1,388 @@
+/* VARIABLES */
+$primary: #001a35;
+$secondary: #c3a350;
+$body-font: 'Poppins', sans-serif;
+$h-font: 'Bodoni Moda', serif;
+
+/* GENERAL */
+body {
+    font-family: $body-font;
+    color: #fff;
+}
+
+a, .nav-link {
+    color: #fff;
+    transition: .3s;
+
+    &:hover, &:focus {
+        color: rgb(255, 255, 255, .75);
+        transition: .3s;
+    }
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-family: $h-font;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+    span {
+        border-bottom: 5px solid $secondary;
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.75rem;
+    }
+}
+
+h3 {
+    font-size: 2rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+}
+
+p {
+    font: {
+        weight: 300;
+        size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.btn {
+    padding: .5rem 4rem;
+    font: {
+        size: 1.2rem;
+        weight: 500;
+    }
+    text-transform: uppercase;
+    color: #fff;
+    transition: .3s;
+    border-radius: 0;
+
+    &-primary {
+        background-color: $primary;
+        border-color: $primary;
+
+        &:hover {
+            background-color: darken($primary, 15%);
+            border-color: darken($primary, 15%);
+            transition: .3s;
+        }
+    }
+
+    &-secondary {
+        background-color: $secondary;
+        border-color: $secondary;
+
+        &:hover {
+            background-color: darken($secondary, 10%);
+            border-color: darken($secondary, 10%);
+            transition: .3s;
+        }
+    }
+}
+
+/* STYLES */
+// navbar
+.navbar {
+    padding: .75rem 6rem;
+    transition: .4s;
+
+    &-logo {
+        max-width: 265px;
+        transition: .4s;
+
+        @media (max-width: 768px) {
+            max-width: 200px;
+        }
+    }
+
+    &.navbar-scrolled {
+        background-color: $primary;
+        font-size: 1rem;
+        transition: .4s;
+
+        .navbar-logo {
+            max-width: 200px;
+            transition: .4s;
+        }
+
+        .nav-link {
+            font-size: 1rem;
+            transition: .4s;
+        }
+    }
+
+    &-toggler {
+        margin-left: auto;
+        color: #fff;
+        font-size: 1.8rem;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    &-nav {
+        .nav-link {
+            @media (min-width: 992px) {
+                padding-right: 1rem !important;
+                padding-left: 1rem !important;
+            }
+
+            @media (min-width: 1400px) {
+                padding-right: 2rem !important;
+                padding-left: 2rem !important;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+    @media (max-width: 991px) {
+        background-color: $primary;
+
+        .d-contents {
+            display: contents;
+        }
+
+        .row {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-right: var(--bs-gutter-x,.75rem);
+        padding-left: var(--bs-gutter-x,.75rem);
+    }
+}
+
+// header
+header {
+    background: {
+        image: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.4) ),
+        url("../img/bg1.jpg");
+        repeat: no-repeat;
+        attachment: fixed;
+        position: center top;
+        size: cover;
+    }
+    height: 100vh;
+
+    @media (max-width: 768px) {
+        background-position: left top;
+    }
+
+    p {
+        width: 50%; 
+        word-wrap: break-word;
+    
+        @media (max-width: 768px) {
+            width: 100%; 
+        }
+    }
+    
+}
+
+.triangle {
+    background: $primary;
+    clip-path: polygon(0 85%, 0% 100%, 100% 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 50%;
+
+    @media (max-width: 768px) {
+        bottom: -1px;
+    }
+
+    &.tr-right {
+        left: auto;
+        right: 0;
+        clip-path: polygon(100% 85%, 0% 100%, 100% 100%);
+    }
+}
+
+// about
+.about {
+    background-color: $primary;
+
+    .btn-secondary {
+        margin-top: 6rem;
+    }
+}
+
+// services
+.services {
+    background: {
+        image: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ),
+        url("../img/bg2.jpg");
+        attachment: fixed;
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+
+    .row {
+        > div {
+            margin-bottom: 5rem;
+
+            @media (min-width: 992px) {
+                &:nth-child(odd) {
+                    .services-card {
+                        margin-right: 2.5rem;
+                    }
+                }
+    
+                &:nth-child(even) {
+                    .services-card {
+                        margin-left: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &-card {
+        background-color: #fff;
+        padding: 1.5rem;
+        color: $primary;
+        height: 100%;
+
+        @media (max-width: 768px) {
+            margin-bottom: 3rem;
+        }
+
+        p {
+            font: {
+                weight: 400;
+            }
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+// job-description
+.job-description {
+    @media (min-width: 992px) {
+        .row {
+            > div {
+                &:nth-child(odd) {
+                    .job-description-card {
+                        margin-right: 1rem;
+                    }
+                }
+    
+                &:nth-child(even) {
+                    .job-description-card {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    article > {
+        h2, p {
+            color: $primary;
+        }
+
+        p {
+            font-weight: 400;
+        }
+    }
+
+    &-card {
+        background-color: $primary;
+        padding: 1rem;
+        margin-bottom: calc((var(--bs-gutter-x) * .5) + 2.5rem);
+
+        h5 {
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// footer
+footer {
+    background-color: $primary;
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+
+    .spircak {
+        @media (min-width: 768px) {
+            margin-right: 1.5rem;
+        }
+
+        .footer-logo {
+            max-width: 350px;
+            margin-bottom: 1rem;
+
+            @media (max-width: 768px) {
+                max-width: 275px;
+            }
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.2;
+            text-align: justify;
+        }
+
+        .signature {
+            text-align: right;
+        }
+    }
+
+    .contact {
+        @media (min-width: 768px) {
+            margin-left: 1.5rem;
+        }
+
+        p {
+            line-height: 1.2;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .copyright {
+        font-size: .8rem;
+    }
+}
